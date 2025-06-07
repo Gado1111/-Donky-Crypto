@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>$DONKY Di*ktators</title>
+    <meta name="description" content="$DONKY Di*ktators is a meme token on BASE blockchain. The motive is simple: Meme culture for satire and fun; to unite the world in LOLs." />
+    <meta property="og:title" content="$DONKY Di*ktators" />
+    <meta property="og:description" content="$DONKY Di*ktators is a meme token on BASE blockchain. The motive is simple: Meme culture for satire and fun; to unite the world in LOLs." />
+    <meta property="og:type" content="website" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <style>
+
+      /* Mobile menu hidden by default */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 60px; /* below the nav */
+    right: -100%;
+    width: 200px;
+    height: calc(100% - 60px);
+    background-color: #222; /* solid bg so links show */
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 9999; /* super high to appear on top */
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li a {
+    color: #fff; /* make sure links are white */
+    font-size: 18px;
+    display: block;
+    padding: 10px 0;
+  }
+}
+
+/* Hamburger icon toggle effect (optional) */
+.hamburger.toggle span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.toggle span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.toggle span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+        /* New styles for hero heading with image */
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero-content .hero-image {
+            flex-shrink: 0;
+            width: 300px;        /* increased width */
+            height: 300px;       /* increased height */
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        /* Replaced h1 text with stacked logos */
+        .logo-heading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px; /* spacing between logos */
+            margin: 0;
+        }
+
+        .logo-heading .stacked-logo {
+            width: 200px;   /* adjust width as needed */
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .tagline {
+            font-style: italic;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: #fcf6f6;
+        }
+
+        .description {
+            font-size: 1.15rem;
+            line-height: 1.5;
+            color: #fcf6f6;
+            margin-bottom: 20px;
+        }
+
+        .cta-buttons .btn {
+            margin-right: 12px;
+            padding: 12px 24px;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn.primary {
+            background-color: #ff6f61;
+            color: white;
+        }
+
+        .btn.primary:hover {
+            background-color: #ff503f;
+        }
+
+        .btn.secondary {
+            background-color: #333;
+            color: white;
+        }
+
+        .btn.secondary:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="_assets1/media/donkey.png" alt="DONKY Logo" class="logo-img" />
+            </div>
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tokenomics">Tokenomics</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="https://aerodrome.finance/connect?to=%2Fdeposit%3Ftoken0%3Deth%26token1%3D0x7a1caca1a79f6fa6fe92a2cac28a81d28f881ab6%26type%3D-1%26chain0%3D8453%26chain1%3D8453%26factory%3D0x420DD381b31aEf6683db6B902084cB0FFECe40Da" class="buy-btn">BUY</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <!-- Image to the left of heading -->
+                <img src="_assets1/media/flex.png" alt="DONKY Icon" class="hero-image" />
+                <div class="hero-text">
+                    <!-- Stacked logos replacing the heading text -->
+                    <h1 class="logo-heading">
+                        <img src="_assets1/media/donkey.png" alt="Donkey Logo" class="stacked-logo" />
+                        <img src="_assets1/media/diktators.png" alt="Di*ktators Logo" class="stacked-logo" />
+                    </h1>
+                    <p class="tagline">"We're being led by $Donkys, so let's make an ass out of them"</p>
+                    <p class="description">
+                        $DONKY Di*ktators is a meme token on BASE blockchain. 
+                        The motive is simple: Meme culture for satire and fun; to unite the world in LOLs.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="https://aerodrome.finance/deposit?token0=eth&token1=0x7a1caca1a79f6fa6fe92a2cac28a81d28f881ab6&type=-1&chain0=8453&chain1=8453&factory=0x420DD381b31aEf6683db6B902084cB0FFECe40Da" class="btn primary">BUY NOW</a>
+                        <a href="https://basescan.org/address/0x7a1cacA1A79f6FA6Fe92a2caC28a81d28F881ab6" class="btn secondary">BASESCAN</a>
+                    </div>
+                </div>
+            </div>
+             <div class="social-icons">
+        <a href="https://x.com/DONKYDicktators" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            Twitter
+        </a>
+        <a href="https://www.instagram.com/donkydicktators" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.69.072-4.948 0-3.259-.014-3.667-.072-4.948-.2-4.358-2.618-6.78-6.98-6.98-1.28-.058-1.689-.072-4.948-.072z" />
+                <path d="M12 5.838c-3.403 0-6.162 2.758-6.162 6.162 0 3.404 2.758 6.162 6.162 6.162 3.404 0 6.162-2.758 6.162-6.162 0-3.404-2.758-6.162-6.162-6.162zm0 10.2c-2.23 0-4.037-1.807-4.037-4.038 0-2.23 1.807-4.037 4.037-4.037 2.23 0 4.038 1.807 4.038 4.037 0 2.23-1.807 4.038-4.038 4.038z" />
+                <circle cx="18.406" cy="5.594" r="1.44" />
+            </svg>
+            Instagram
+        </a>
+        <a href="https://discord.gg/DonkyDicktators" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.317 4.369a19.791 19.791 0 00-4.885-1.515.07.07 0 00-.073.037c-.211.375-.444.864-.608 1.249-1.844-.276-3.68-.276-5.486 0-.164-.39-.405-.874-.617-1.249a.07.07 0 00-.073-.037c-1.68.292-3.32.82-4.885 1.515a.069.069 0 00-.032.027C.533 9.045-.319 13.579.099 18.057a.082.082 0 00.028.056 19.9 19.9 0 006.066 3.113.07.07 0 00.078-.027c.47-.63.889-1.295 1.248-1.994a.07.07 0 00-.038-.096 13.138 13.138 0 01-1.872-.888.07.07 0 01-.007-.118c.125-.094.25-.192.37-.291a.07.07 0 01.076-.01c3.927 1.793 8.18 1.793 12.061 0a.07.07 0 01.078.009c.12.099.245.197.372.291a.07.07 0 01-.006.118 12.354 12.354 0 01-1.873.888.07.07 0 00-.038.095c.36.7.78 1.365 1.249 1.994a.07.07 0 00.078.028 19.876 19.876 0 006.066-3.112.083.083 0 00.028-.055c.5-5.177-.838-9.673-3.548-13.661a.061.061 0 00-.03-.028zM8.02 15.331c-1.182 0-2.156-1.085-2.156-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.175 1.095 2.156 2.418 0 1.334-.955 2.419-2.157 2.419zm7.974 0c-1.182 0-2.156-1.085-2.156-2.419 0-1.333.946-2.418 2.157-2.418 1.21 0 2.175 1.095 2.156 2.418 0 1.334-.946 2.419-2.157 2.419z"/>
+            </svg>
+            Discord
+        </a>
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/channel/YOUR_CHANNEL_ID" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a2.994 2.994 0 00-2.108-2.12C19.66 3.5 12 3.5 12 3.5s-7.66 0-9.39.566a2.994 2.994 0 00-2.108 2.12A31.177 31.177 0 000 12a31.177 31.177 0 00.502 5.814 2.994 2.994 0 002.108 2.12c1.73.566 9.39.566 9.39.566s7.66 0 9.39-.566a2.994 2.994 0 002.108-2.12A31.177 31.177 0 0024 12a31.177 31.177 0 00-.502-5.814zM9.75 15.02v-6.04l5.25 3.02-5.25 3.02z" />
+            </svg>
+            YouTube
+        </a>
+        <!-- Telegram -->
+        <a href="https://t.me/DONKYDicktators" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9.04 16.5l-.38 5.5c.54 0 .77-.23 1.05-.5l2.52-2.41 5.24 3.83c.96.53 1.65.25 1.9-.89l3.44-16.22-21.1 8.55 5.33 1.57 12.38-7.8z"/>
+            </svg>
+            Telegram
+        </a>
+        <!-- Dextools -->
+        <a href="https://www.dextools.io/app/en/ether/pair-explorer/PAIR_ADDRESS" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 12l2-2 4 4 8-8 2 2-10 10z"/>
+            </svg>
+            Dextools
+        </a>
+    </div>
+        </section>
+
+
+         <section class="contract-info">
+            <h3>Contract Address:</h3>
+            <p class="contract-address">0x7a1cacA1A79f6FA6Fe92a2caC28a81d28F881ab6</p>
+            <a href="https://tinyurl.com/DonkyASSWipePaper" class="whitepaper-link">A$$Wipe Paper</a>
+        </section>
+
+        <section id="tokenomics" class="tokenomics">
+            <div class="section-header">
+                <img src="_assets1/media/tokonomics.png" alt="Tokenomics" class="section-title-img" />
+            </div>
+           
+                <h3>Total Supply: 2 Billion $DONKY</h3>
+                <div class="distribution">
+                    <h4>Distribution:</h4>
+                    <ul>
+                        <li>80% (1.6B): Public w/ LP LOCKED (<a href="https://basescan.org/tx/0x03d1181d7a8432dac92bd71c2fb456d55699f093751a57143e36fb20b9c5ae26">TX Proof</a>)</li>
+                        <li>5% (100M): Development (NFT SocialFi/GameFi)</li>
+                        <li>5% (100M): Marketing</li>
+                        <li>5% (100M): Team (vested)</li>
+                        <li>5% (100M): Comps/Prizes</li>
+                    </ul>
+                </div>
+                <p class="quote">"As long as the world has Di*ktators, there will be $DONKY"</p>
+            </div>
+        </section>
+
+        <section id="roadmap" class="roadmap">
+            <div class="section-header">
+                <img src="_assets1/media/roadmap.png" alt="DONKY Dictator Character" class="section-title-img roadmap-donkey" />
+            </div>
+            <div class="roadmap-timeline">
+                <div class="timeline-item">
+                    <h3>May 2025</h3>
+                    <p>$DONKY launches for our right to freedom of speech!</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>June/July 2025</h3>
+                    <p>Build the community & brand.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>August/Sept 2025</h3>
+                    <p>Build $DONKY Di*ktators NFT Trading Game & Staking</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>October/November 2025</h3>
+                    <p>Launch $DONKY Di*ktators NFT Trading Game & Staking</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Q2 2026</h3>
+                    <p>$DONKY CON: An expo featuring stand-up comedy, panel talks, fire-sides, music etc.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2026 & Beyond</h3>
+                    <p>"Success is not final, failure is not fatal: it is the courage to continue that counts" - Sir Winston Churchill</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 $DONKY Di*ktators. All rights reserved.</p>
+    </footer>
+
+   <script>
+   const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('mobile-active');
+});
+
+    </script>
+</body>
+</html>
