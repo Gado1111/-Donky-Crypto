@@ -2,321 +2,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$DONKY Di*ktators - Meme Token Revolution</title>
-    <link rel="icon" href="_assets1/media/banner.png" type="image/x-icon" />
-    <meta name="description" content="$DONKY Di*ktators is a meme token on BASE blockchain. The motive is simple: Meme culture for satire and fun; to unite the world in LOLs.">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$DONKY Diktators</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="_assets1/media/banner.png" alt="$DONKY Di*ktators" class="logo-img">
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#tokenomics" class="nav-link">Tokenomics</a>
-                <a href="#roadmap" class="nav-link">Roadmap</a>
-                <a href="#community" class="nav-link">Community</a>
-                <a href="https://aerodrome.finance/connect?to=%2Fdeposit%3Ftoken0%3Deth%26token1%3D0x7a1caca1a79f6fa6fe92a2cac28a81d28f881ab6%26type%3D-1%26chain0%3D8453%26chain1%3D8453%26factory%3D0x420DD381b31aEf6683db6B902084cB0FFECe40Da" class="nav-link buy-btn">BUY NOW</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+  <nav class="navigation">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span>$DONKY</span>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#home" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#tokenomics" class="nav-link">Tokenomics</a>
+        </li>
+        <li class="nav-item">
+          <a href="#roadmap" class="nav-link">Roadmap</a>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Hero Section with Image Slider -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="hero-logo">
-                    <img src="_assets1/media/banner.png" alt="$DONKY Di*ktators" class="hero-logo-img">
-                </div>
-                <p class="hero-subtitle">"We're being led by $Donkys, so let's make an ass out of them"</p>
-                <p class="hero-description">
-                    A revolutionary meme token on BASE blockchain uniting the world through satirical humor and LOLs.
-                </p>
-                <div class="hero-buttons">
-                    <a href="https://aerodrome.finance/deposit?token0=eth&token1=0x7a1caca1a79f6fa6fe92a2cac28a81d28f881ab6&type=-1&chain0=8453&chain1=8453&factory=0x420DD381b31aEf6683db6B902084cB0FFECe40Da" class="btn btn-primary">
-                        <i class="fas fa-rocket"></i> BUY $DONKY
-                    </a>
-                    <a href="https://basescan.org/address/0x7a1cacA1A79f6FA6Fe92a2caC28a81d28F881ab6" class="btn btn-secondary">
-                        <i class="fas fa-search"></i> View Contract
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Image Slider -->
-            <div class="slider-container">
-                <div class="slider">
-                    <div class="slide active">
-                        <img src="_assets1/media/zel.png" alt="DONKY Banner" class="slide-img">
-                    </div>
-                    <div class="slide">
-                        <img src="_assets1/media/macron.png" alt="DONKY Dicktators" class="slide-img">
-                    </div>
-                    <div class="slide">
-                        <img src="_assets1/media/banner.png" alt="DD Macron" class="slide-img">
-                    </div>
-                    <div class="slide">
-                        <img src="_assets1/media/horse.png" alt="DD Zel" class="slide-img">
-                    </div>
-                </div>
-                
-                <!-- Slider Navigation -->
-                <div class="slider-nav">
-                    <button class="prev-btn" onclick="changeSlide(-1)">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="next-btn" onclick="changeSlide(1)">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-                
-                <!-- Slider Dots -->
-                <div class="slider-dots">
-                    <span class="dot active" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Floating Elements -->
-        <div class="floating-elements">
-            <div class="float-coin">$</div>
-            <div class="float-coin">🐴</div>
-            <div class="float-coin">💎</div>
-        </div>
-    </section>
-        <!-- Community Section -->
-    <section id="community" class="community-section">
-        <div class="container">
-            <h2 class="section-title">Join Our Community</h2>
-            <p class="section-subtitle">Connect with fellow $DONKY holders and stay updated</p>
-            <div class="social-grid">
-                <a href="https://x.com/DONKYDicktators" class="social-card">
-                    <i class="fab fa-twitter"></i>
-                    <span>Twitter</span>
-                </a>
-                <a href="https://www.instagram.com/donkydicktators" class="social-card">
-                    <i class="fab fa-instagram"></i>
-                    <span>Instagram</span>
-                </a>
-                <a href="https://discord.gg/DonkyDicktators" class="social-card">
-                    <i class="fab fa-discord"></i>
-                    <span>Discord</span>
-                </a>
-                <a href="https://t.me/DONKYDicktators" class="social-card">
-                    <i class="fab fa-telegram"></i>
-                    <span>Telegram</span>
-                </a>
-                <a href="https://www.dextools.io/app/en/token/donkydicktators?t=1749443933020" class="social-card">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Dextools</span>
-                </a>
-                <a href="https://www.youtube.com/@donkydictators" class="social-card">
-                    <i class="fab fa-youtube"></i>
-                    <span>YouTube</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Contract Info -->
-    <section class="contract-section">
-        <div class="container">
-            <div class="contract-card">
-                <h3><i class="fas fa-file-contract"></i> Contract Address</h3>
-                <div class="contract-address">
-                    <code>0x7a1cacA1A79f6FA6Fe92a2caC28a81d28F881ab6</code>
-                    <button onclick="copyContract()" class="copy-btn">
-                        <i class="fas fa-copy"></i>
-                    </button>
-                </div>
-                <a href="https://tinyurl.com/DonkyASSWipePaper" class="whitepaper-link">
-                    <i class="fas fa-file-pdf"></i> A$$Wipe Paper
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2 class="section-title">About $DONKY</h2>
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="card-icon">🚀</div>
-                    <h3>Revolutionary Meme</h3>
-                    <p>Breaking the chains of political monotony with satirical humor and community-driven fun.</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">🌍</div>
-                    <h3>Global Unity</h3>
-                    <p>Uniting people worldwide through laughter and shared experiences in the crypto space.</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">💪</div>
-                    <h3>Community Power</h3>
-                    <p>Empowering holders with governance, staking rewards, and exclusive community benefits.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tokenomics Section -->
-    <section id="tokenomics" class="tokenomics-section">
-        <div class="container">
-            <h2 class="section-title">Tokenomics</h2>
-            <div class="tokenomics-grid">
-                <div class="tokenomics-info">
-                    <h3>Total Supply: 2 Billion $DONKY</h3>
-                    <div class="distribution-list">
-                        <div class="distribution-item">
-                            <div class="percentage">80%</div>
-                            <div class="details">
-                                <strong>Public w/ LP LOCKED</strong>
-                                <span>1.6B tokens</span>
-                                <a href="https://basescan.org/tx/0x03d1181d7a8432dac92bd71c2fb456d55699f093751a57143e36fb20b9c5ae26">TX Proof</a>
-                            </div>
-                        </div>
-                        <div class="distribution-item">
-                            <div class="percentage">5%</div>
-                            <div class="details">
-                                <strong>Development</strong>
-                                <span>NFT SocialFi/GameFi - 100M</span>
-                            </div>
-                        </div>
-                        <div class="distribution-item">
-                            <div class="percentage">5%</div>
-                            <div class="details">
-                                <strong>Marketing</strong>
-                                <span>100M tokens</span>
-                            </div>
-                        </div>
-                        <div class="distribution-item">
-                            <div class="percentage">5%</div>
-                            <div class="details">
-                                <strong>Team (Vested)</strong>
-                                <span>100M tokens</span>
-                            </div>
-                        </div>
-                        <div class="distribution-item">
-                            <div class="percentage">5%</div>
-                            <div class="details">
-                                <strong>Comps/Prizes</strong>
-                                <span>100M tokens</span>
-                            </div>
-                        </div>
-                    </div>
-                    <blockquote class="tokenomics-quote">
-                        "As long as the world has Di*ktators, there will be $DONKY"
-                    </blockquote>
-                </div>
-                <div class="tokenomics-chart">
-                    <div class="pie-chart">
-                        <div class="chart-segment segment-1"></div>
-                        <div class="chart-segment segment-2"></div>
-                        <div class="chart-segment segment-3"></div>
-                        <div class="chart-segment segment-4"></div>
-                        <div class="chart-segment segment-5"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Roadmap Section -->
-    <section id="roadmap" class="roadmap-section">
-        <div class="container">
-            <h2 class="section-title">Roadmap</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">May 2025</div>
-                    <div class="timeline-content">
-                        <h3>Launch</h3>
-                        <p>$DONKY launches for our right to freedom of speech!</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">June/July 2025</div>
-                    <div class="timeline-content">
-                        <h3>Community Building</h3>
-                        <p>Build the community & brand.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">Aug/Sept 2025</div>
-                    <div class="timeline-content">
-                        <h3>Development</h3>
-                        <p>Build $DONKY Di*ktators NFT Trading Game & Staking</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">Oct/Nov 2025</div>
-                    <div class="timeline-content">
-                        <h3>Game Launch</h3>
-                        <p>Launch $DONKY Di*ktators NFT Trading Game & Staking</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">Q2 2026</div>
-                    <div class="timeline-content">
-                        <h3>$DONKY CON</h3>
-                        <p>An expo featuring stand-up comedy, panel talks, fire-sides, music etc.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2026 & Beyond</div>
-                    <div class="timeline-content">
-                        <h3>Continued Growth</h3>
-                        <p>"Success is not final, failure is not fatal: it is the courage to continue that counts" - Sir Winston Churchill</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="floating-footer-elements"></div>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>$DONKY Di*ktators</h3>
-                    <p>Revolutionizing meme culture on the BASE blockchain</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <a href="#about">About</a>
-                    <a href="#tokenomics">Tokenomics</a>
-                    <a href="#roadmap">Roadmap</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Community</h4>
-                    <a href="https://x.com/DONKYDicktators">Twitter</a>
-                    <a href="https://discord.gg/DonkyDicktators">Discord</a>
-                    <a href="https://t.me/DONKYDicktators">Telegram</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 $DONKY Di*ktators. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <div class="background-container">
+    <img src="_assets1/media/home.png" alt="$DONKY Diktators Background" class="background-image">
+  </div>
+  
+  <div class="slider-container">
+    <div class="slider-wrapper">
+      <div class="slide active">
+        <img src="post/1.png" alt="Slide 1" class="slide-image">
+      </div>
+      <div class="slide">
+        <img src="post/2.png" alt="Slide 2" class="slide-image">
+      </div>
+      <div class="slide">
+        <img src="post/3.png" alt="Slide 3" class="slide-image">
+      </div>
+    </div>
+    <div class="slider-dots">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+    </div>
+  </div>
+  
+  <section id="tokenomics" class="content-section">
+    <div class="section-content">
+      <h2>Tokenomics</h2>
+      <p>Learn about $DONKY token distribution and economics</p>
+    </div>
+  </section>
+  
+  <section id="roadmap" class="content-section">
+    <div class="section-content">
+      <h2>Roadmap</h2>
+      <p>Discover the future plans for $DONKY Diktators</p>
+    </div>
+  </section>
+  
+  <script src="scripts.js"></script>
 </body>
 </html>
