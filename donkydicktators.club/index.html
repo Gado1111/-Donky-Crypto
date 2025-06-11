@@ -1,74 +1,551 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>$DONKY Diktators</title>
-  <link href="styles.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>$DONKY Di*ktators</title>
+    <link rel="icon" href="_assets1/media/donkey.png" type="image/x-icon" />
+
+    <meta name="description" content="$DONKY Di*ktators is a meme token on BASE blockchain. The motive is simple: Meme culture for satire and fun; to unite the world in LOLs." />
+    <meta property="og:title" content="$DONKY Di*ktators" />
+    <meta property="og:description" content="$DONKY Di*ktators is a meme token on BASE blockchain. The motive is simple: Meme culture for satire and fun; to unite the world in LOLs." />
+    <meta property="og:type" content="website" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <style>
+
+      /* Mobile menu hidden by default */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 60px; /* below the nav */
+    right: -100%;
+    width: 200px;
+    height: calc(100% - 60px);
+    background-color: #222; /* solid bg so links show */
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 9999; /* super high to appear on top */
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li a {
+    color: #fff; /* make sure links are white */
+    font-size: 18px;
+    display: block;
+    padding: 10px 0;
+  }
+}
+
+/* Hamburger icon toggle effect (optional) */
+.hamburger.toggle span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.toggle span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.toggle span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+        /* New styles for hero heading with image */
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero-content .hero-image {
+            flex-shrink: 0;
+            width: 300px;        /* increased width */
+            height: 300px;       /* increased height */
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        /* Replaced h1 text with stacked logos */
+        .logo-heading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px; /* spacing between logos */
+            margin: 0;
+        }
+
+        .logo-heading .stacked-logo {
+            width: 200px;   /* adjust width as needed */
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .tagline {
+            font-style: italic;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: #fcf6f6;
+        }
+
+        .description {
+            font-size: 1.15rem;
+            line-height: 1.5;
+            color: #fcf6f6;
+            margin-bottom: 20px;
+        }
+
+        .cta-buttons .btn {
+            margin-right: 12px;
+            padding: 12px 24px;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn.primary {
+            background-color: #ff6f61;
+            color: white;
+        }
+
+        .btn.primary:hover {
+            background-color: #ff503f;
+        }
+
+        .btn.secondary {
+            background-color: #333;
+            color: white;
+        }
+
+        .btn.secondary:hover {
+            background-color: #555;
+        }
+
+        /* Slider Styles */
+        .slider-section {
+            margin: 4rem auto;
+            padding: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-section h2 {
+            color: #ffd54c;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .slider-container {
+            position: relative;
+            width: calc(600px + 120px);
+            max-width: calc(100vw - 4rem);
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transform: translateX(100%) rotateY(45deg) scale(0.8);
+            transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+            backface-visibility: hidden;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0) rotateY(0deg) scale(1);
+            z-index: 10;
+        }
+
+        .slide.prev {
+            opacity: 0.7;
+            transform: translateX(-100%) rotateY(-45deg) scale(0.8);
+            z-index: 5;
+        }
+
+        .slide.next {
+            opacity: 0.7;
+            transform: translateX(100%) rotateY(45deg) scale(0.8);
+            z-index: 5;
+        }
+
+        .slide-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .slide.active .slide-image {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 20;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-btn:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .prev-btn {
+            left: -30px;
+        }
+
+        .next-btn {
+            right: -30px;
+        }
+
+        /* Mobile responsiveness for hero section */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .hero-content .hero-image {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+            }
+
+            .logo-heading .stacked-logo {
+                width: 150px;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+
+            .description {
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .cta-buttons .btn {
+                width: 90%;
+                max-width: 250px;
+                margin-right: 0;
+                text-align: center;
+            }
+
+            .slider-container {
+                width: calc(400px + 100px);
+            }
+
+            .slider {
+                height: 300px;
+            }
+
+            .nav-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .prev-btn {
+                left: -25px;
+            }
+
+            .next-btn {
+                right: -25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero-content {
+                gap: 10px;
+            }
+
+            .hero-content .hero-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .logo-heading .stacked-logo {
+                width: 120px;
+            }
+
+            .tagline {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+
+            .description {
+                font-size: 0.9rem;
+                margin-bottom: 12px;
+            }
+
+            .cta-buttons .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav class="navigation">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <span>$DONKY</span>
-      </div>
-      <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="#home" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="#tokenomics" class="nav-link">Tokenomics</a>
-        </li>
-        <li class="nav-item">
-          <a href="#roadmap" class="nav-link">Roadmap</a>
-        </li>
-      </ul>
-      <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-    </div>
-  </nav>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="_assets1/media/donkey.png" alt="DONKY Logo" class="logo-img" />
+            </div>
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tokono">Tokenomics</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="https://aerodrome.finance/connect?to=%2Fdeposit%3Ftoken0%3Deth%26token1%3D0x7a1caca1a79f6fa6fe92a2cac28a81d28f881ab6%26type%3D-1%26chain0%3D8453%26chain1%3D8453%26factory%3D0x420DD381b31aEf6683db6B902084cB0FFECe40Da" class="buy-btn">BUY</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <div class="background-container">
-    <img src="_assets1/media/home.PNG" alt="$DONKY Diktators Background" class="background-image">
-  </div>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <!-- Image to the left of heading -->
+                <img src="_assets1/media/flex.png" alt="DONKY Icon" class="hero-image" />
+                <div class="hero-text">
+                    <!-- Stacked logos replacing the heading text -->
+                    <h1 class="logo-heading">
+                        <img src="_assets1/media/donkey.png" alt="Donkey Logo" class="stacked-logo" />
+                        <img src="_assets1/media/diktators.png" alt="Di*ktators Logo" class="stacked-logo" />
+                    </h1>
+                    <p class="tagline">"We're being led by $Donkys, so let's make an ass out of them"</p>
+                    <p class="description">
+                        $DONKY Di*ktators is a meme token on BASE blockchain. 
+                        The motive is simple: Meme culture for satire and fun; to unite the world in LOLs.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="https://aerodrome.finance/deposit?token0=eth&token1=0x7a1caca1a79f6fa6fe92a2cac28a81d28f881ab6&type=-1&chain0=8453&chain1=8453&factory=0x420DD381b31aEf6683db6B902084cB0FFECe40Da" class="btn primary">BUY NOW</a>
+                        <a href="https://basescan.org/address/0x7a1cacA1A79f6FA6Fe92a2caC28a81d28F881ab6" class="btn secondary">BASESCAN</a>
+                    </div>
+                </div>
+            </div>
+             <div class="social-icons">
+        <a href="https://x.com/DONKYDicktators" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            Twitter
+        </a>
+        <a href="https://www.instagram.com/donkydicktators" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.69.072-4.948 0-3.259-.014-3.667-.072-4.948-.2-4.358-2.618-6.78-6.98-6.98-1.28-.058-1.689-.072-4.948-.072z" />
+                <path d="M12 5.838c-3.403 0-6.162 2.758-6.162 6.162 0 3.404 2.758 6.162 6.162 6.162 3.404 0 6.162-2.758 6.162-6.162 0-3.404-2.758-6.162-6.162-6.162zm0 10.2c-2.23 0-4.037-1.807-4.037-4.038 0-2.23 1.807-4.037 4.037-4.037 2.23 0 4.038 1.807 4.038 4.037 0 2.23-1.807 4.038-4.038 4.038z" />
+                <circle cx="18.406" cy="5.594" r="1.44" />
+            </svg>
+            Instagram
+        </a>
+        <a href="https://discord.gg/DonkyDicktators" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.317 4.369a19.791 19.791 0 00-4.885-1.515.07.07 0 00-.073.037c-.211.375-.444.864-.608 1.249-1.844-.276-3.68-.276-5.486 0-.164-.39-.405-.874-.617-1.249a.07.07 0 00-.073-.037c-1.68.292-3.32.82-4.885 1.515a.069.069 0 00-.032.027C.533 9.045-.319 13.579.099 18.057a.082.082 0 00.028.056 19.9 19.9 0 006.066 3.113.07.07 0 00.078-.027c.47-.63.889-1.295 1.248-1.994a.07.07 0 00-.038-.096 13.138 13.138 0 01-1.872-.888.07.07 0 01-.007-.118c.125-.094.25-.192.37-.291a.07.07 0 01.076-.01c3.927 1.793 8.18 1.793 12.061 0a.07.07 0 01.078.009c.12.099.245.197.372.291a.07.07 0 01-.006.118 12.354 12.354 0 01-1.873.888.07.07 0 00-.038.095c.36.7.78 1.365 1.249 1.994a.07.07 0 00.078.028 19.876 19.876 0 006.066-3.112.083.083 0 00.028-.055c.5-5.177-.838-9.673-3.548-13.661a.061.061 0 00-.03-.028zM8.02 15.331c-1.182 0-2.156-1.085-2.156-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.175 1.095 2.156 2.418 0 1.334-.955 2.419-2.157 2.419zm7.974 0c-1.182 0-2.156-1.085-2.156-2.419 0-1.333.946-2.418 2.157-2.418 1.21 0 2.175 1.095 2.156 2.418 0 1.334-.946 2.419-2.157 2.419z"/>
+            </svg>
+            Discord
+        </a>
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@donkydictators" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a2.994 2.994 0 00-2.108-2.12C19.66 3.5 12 3.5 12 3.5s-7.66 0-9.39.566a2.994 2.994 0 00-2.108 2.12A31.177 31.177 0 000 12a31.177 31.177 0 00.502 5.814 2.994 2.994 0 002.108 2.12c1.73.566 9.39.566 9.39.566s7.66 0 9.39-.566a2.994 2.994 0 002.108-2.12A31.177 31.177 0 0024 12a31.177 31.177 0 00-.502-5.814zM9.75 15.02v-6.04l5.25 3.02-5.25 3.02z" />
+            </svg>
+            YouTube
+        </a>
+        <!-- Telegram -->
+        <a href="https://t.me/DONKYDicktators" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9.04 16.5l-.38 5.5c.54 0 .77-.23 1.05-.5l2.52-2.41 5.24 3.83c.96.53 1.65.25 1.9-.89l3.44-16.22-21.1 8.55 5.33 1.57 12.38-7.8z"/>
+            </svg>
+            Telegram
+        </a>
+              <a href="https://www.dextools.io/app/en/token/donkydicktators?t=1749716639537" target="_blank" rel="noopener noreferrer">
+            <img src="_assets1/media/dex.PNG" alt="Dextools" width="20" height="20" style="border-radius: 3px; object-fit: contain;">
+            Dextools
+        </a>
+    </div>
+        </section>
 
-  <div class="slider-container">
-    <div class="slider-wrapper">
-      <div class="slide active">
-        <img src="post/1.PNG" alt="Slide 1" class="slide-image">
-      </div>
-      <div class="slide">
-        <img src="post/2.PNG" alt="Slide 2" class="slide-image">
-      </div>
-      <div class="slide">
-        <img src="post/3.PNG" alt="Slide 3" class="slide-image">
-      </div>
-    </div>
-    <div class="slider-dots">
-      <span class="dot active" data-slide="0"></span>
-      <span class="dot" data-slide="1"></span>
-      <span class="dot" data-slide="2"></span>
-    </div>
-  </div>
-  
-  <section id="tokenomics" class="content-section">
-    <div class="section-content">
-      <h2>Tokenomics</h2>
-      <p>Learn about $DONKY token distribution and economics</p>
-    </div>
-  </section>
-  
-  <section id="roadmap" class="content-section">
-    <div class="section-content">
-      <h2>Roadmap</h2>
-      <p>Discover the future plans for $DONKY Diktators</p>
-    </div>
-  </section>
-  
-  <script src="script.js"></script>
+        <style>
+        /* Mobile responsiveness for social icons */
+        @media (max-width: 768px) {
+            .social-icons {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .social-icons a {
+                min-width: auto;
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .social-icons {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+            }
+
+            .social-icons a {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+        }
+        </style>
+
+        <!-- Slider Section Added After Social Media Icons -->
+        <section class="slider-section">
+            <h2> $DONKY Di*ktators</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide active">
+                        <img src="post/1.PNG" alt="Image 1" class="slide-image">
+                    </div>
+                    <div class="slide">
+                        <img src="post/2.PNG" alt="Image 2" class="slide-image">
+                    </div>
+                    <div class="slide">
+                        <img src="post/3.PNG" alt="Image 3" class="slide-image">
+                    </div>
+                    <div class="slide">
+                        <img src="post/5.PNG" alt="Image 4" class="slide-image">
+                    </div>
+                    <div class="slide">
+                        <img src="post/4.PNG" alt="Image 5" class="slide-image">
+                    </div>
+                </div>
+
+                <button class="nav-btn prev-btn" onclick="previousSlide()">‹</button>
+                <button class="nav-btn next-btn" onclick="nextSlide()">›</button>
+            </div>
+        </section><br></main><br>
+
+
+         <section class="contract-info">
+            <h3>Contract Address:</h3>
+            <p class="contract-address">0x7a1cacA1A79f6FA6Fe92a2caC28a81d28F881ab6</p>
+            <a href="https://tinyurl.com/DonkyASSWipePaper" class="whitepaper-link">A$$Wipe Paper</a>
+        </section>
+
+         <section id="tokono" class="tokono">
+            <img src="_assets1/media/tokono.PNG" alt="tokono" class="tokono-image" />
+        </section>
+
+        <section id="roadmap" class="roadmap">
+            <img src="_assets1/media/road.PNG" alt="Roadmap" class="roadmap-image" />
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 $DONKY Di*ktators. All rights reserved.</p>
+    </footer>
+
+   <script>
+   const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('mobile-active');
+});
+
+// Slider functionality
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function updateSlides() {
+    slides.forEach((slide, index) => {
+        slide.classList.remove('active', 'prev', 'next');
+
+        if (index === currentSlide) {
+            slide.classList.add('active');
+        } else if (index === (currentSlide - 1 + totalSlides) % totalSlides) {
+            slide.classList.add('prev');
+        } else if (index === (currentSlide + 1) % totalSlides) {
+            slide.classList.add('next');
+        }
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlides();
+}
+
+function previousSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateSlides();
+}
+
+// Initialize slider
+updateSlides();
+
+// Auto-play slider (optional)
+setInterval(nextSlide, 5000);
+    </script>
 </body>
 </html>
